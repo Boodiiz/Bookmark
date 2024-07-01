@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <link rel="stylesheet" href="./Css/all.min.css">
+  <link rel="stylesheet" href="./Css/bootstrap.min.css">
+  <link rel="stylesheet" href="./Css/style.css">
+  <title>Bookmark</title>
+</head>
+<body>
+  
+  <main class="py-5">
+    <div class="container d-flex justify-content-center align-items-center flex-column">
+      <h1 class="position-relative py-2 z-1">Bookmarker</h1>
+      <div class="bookmark-body gap-4 w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center">
+        <h2>
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div class="site-name w-100 d-flex flex-column justify-content-center">
+          <label class="pb-2 fw-bold" for="bookmarkname">
+            <i class="fa-solid fa-book-bookmark"></i>
+            Site Name
+          </label>
+          <input oninput="isValidInput(nameRegex,this)" type="text" placeholder="Bookmark Name" class="form-control" id="bookmarkname">
+          <p class="pt-2 d-none">Please enter a Valid Name</p>
+        </div>
+        <div class="site-url w-100 d-flex flex-column justify-content-center">
+          <label class="pb-2 fw-bold" for="bookmarkURL">
+            <i class="fa-solid fa-link"></i>
+            Site URL
+          </label>
+          <input oninput="isValidInput(URLRegex,this)" type="text" placeholder="Website URL" class="form-control" id="bookmarkURL">
+          <p class="pt-2 d-none">Please enter a Valid URL</p>
+        </div>
+        <button id="submitButton" onclick="addWebsite()" class="btn btn btn-danger px-5 d-block">Submit</button>
+        <button id="updateButton" onclick="updateWebsite()" class="btn btn btn-secondary px-5 d-none">Update Data</button>
+      </div>
+      <table class="table mt-4 text-center bg-light">
+        <thead>
+          <tr>
+            <th class="text-capitalize">index</th>
+            <th class="text-capitalize">website name</th>
+            <th class="text-capitalize">visit</th>
+            <th class="text-capitalize">delete</th>
+            <th class="text-capitalize">update</th>
+          </tr>
+        </thead>
+        <tbody id="tableContent">
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+  
+
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/JS.js"></script>
+</body>
+</html>
